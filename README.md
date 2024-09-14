@@ -1,6 +1,10 @@
-# Balance Mod for Carx
+# Balance Mod for CarX
 
-This project modifies various performance parameters for different race cars in a game. The adjustments include changes to aerodynamic drag, downforce, turbo pressure, RPM limiter, and car weight distribution.
+This project modifies various performance parameters for different race cars in CarX. The adjustments include changes to aerodynamic drag, downforce, turbo pressure, RPM limiter, and car weight distribution.
+
+## Car Model Adjustments
+
+### GT3 Cars
 
 ## Car Model Adjustments
 
@@ -136,3 +140,105 @@ This project modifies various performance parameters for different race cars in 
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 43.95 kg
   - Rear downforce: 53.81 kg
+
+### LMDH Cars
+
+#### Toyota GR010 Hybrid (carId: 114)
+- Set front drag coefficient to -0.02.
+- Set rear drag coefficient to 1.98.
+- Set turbo pressure to 1.264.
+- Set car weight to 1040 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 200 kg
+  - Rear downforce: 244.44 kg
+
+#### Porsche 963 LMDh (carId: 94)
+- Set front drag coefficient to 0.02.
+- Set rear drag coefficient to 2.02.
+- Set turbo pressure to 1.133.
+- Set car weight to 1030 kg.
+- Set front weight distribution to 47%.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 190 kg
+  - Rear downforce: 232.22 kg
+
+#### Peugeot 9X8 (carId: 128)
+- Set front drag coefficient to -0.13.
+- Set rear drag coefficient to 1.87.
+- Set turbo pressure to 1.035.
+- Set car weight to 1040 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 205 kg
+  - Rear downforce: 250.56 kg
+
+#### Glickenhaus SCG 007 LMH (carId: 121)
+- Set front drag coefficient to -0.05.
+- Set rear drag coefficient to 1.95.
+- Set turbo pressure to 1.225.
+- Set car weight to 1030 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 200 kg
+  - Rear downforce: 244.44 kg
+
+#### Ferrari 499P LMH (carId: 116)
+- Set front drag coefficient to -0.09.
+- Set rear drag coefficient to 1.91.
+- Set turbo pressure to 0.78.
+- Set car weight to 1040 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 197.50 kg
+  - Rear downforce: 241.39 kg
+
+#### Cadillac LMH (carId: 71)
+- Set front drag coefficient to -0.11.
+- Set rear drag coefficient to 1.89.
+- Set turbo pressure to 1.21.
+- Set car weight to 1030 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 192.50 kg
+  - Rear downforce: 235.28 kg
+
+#### BMW M Hybrid (carId: 101)
+- Set car weight to 1030 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 187.50 kg
+  - Rear downforce: 229.17 kg
+
+### Karting
+
+#### Kei Truck Karting (carId: 118)
+- Set front drag coefficient to 0.5.
+- Set rear drag coefficient to 1.5.
+- Set turbo pressure to 0.
+- Set car weight to 150 kg.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 2 kg
+  - Rear downforce: 3 kg
+
+## Features
+- Adjustments for GT3, LMDH, and Karting vehicles
+- Real-time updates to maintain consistent performance
+- Easy-to-use interface with mutually exclusive toggle buttons
+
+## How to Use
+1. Install the mod following the standard CarX mod installation procedure
+- " Install firstly KSL https://github.com/trbflxr/ksl "
+- " Install secondly Kino Mod https://github.com/trbflxr/kino "
+- " Install Balance mod "
+- "Drop it into steam\steamapps\common\CarX Drift Racing Online\kino\mods"
+3. In the game, access the mod menu.
+4. Choose one of the three options:
+   - "Apply Settings for GT-3 Car"
+   - "Apply Settings for LMDH Car"
+   - "Karting on Kei Truck"
+5. The mod will automatically apply the appropriate settings for your selected car category.
+
+Note: Only one setting can be active at a time. Activating a new setting will automatically deactivate the others.
+
+## Version
+Current Version: 1.0.3
+
+## Credits
+Created by Kido
+
+For bug reports or feature requests, please open an issue in this repository.
