@@ -239,6 +239,15 @@ Note: Only one setting can be active at a time. Activating a new setting will au
 Current Version: 1.0.3
 
 ## Credits
-Created by Kido
+- Created by Kido
+- And special thanks to these guys for testing and developing the Mod:
+- Jeefrect
+- Popura
+- Harvok
+- Giozzik
+- Xameron
+- Dranser
+- Schnordic
+- and others
 
 For bug reports or feature requests, please open an issue in this repository.
