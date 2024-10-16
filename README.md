@@ -6,106 +6,132 @@ This project modifies various performance parameters for different race cars in 
 
 ### GT3 Cars
 
-## Car Model Adjustments
-
 ### BMW M4 GT3 (carId: 32)
+- Set aero.sx to 2.54.
 - Set turbo pressure to 0.83.
 - Set car weight to 1250 kg.
+- Set engine.revLimiter to 7500.
+- Set weight.frontPercent to 54.1%.
+- Set engine.maxTorque to 410.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 48.34 kg
   - Rear downforce: 59.08 kg
 
 ### Aston Martin GT3 (carId: 123)
-- Set front drag coefficient to 0.3.
-- Set rear drag coefficient to 2.23.
+- Set aero.sx to 2.5.
+- Set aero.cx to 0.3.
 - Set turbo pressure to 0.68.
 - Set car weight to 1245 kg.
+- Set engine.revLimiter to 7200.
+- Set weight.frontPercent to 53.7%.
+- Set engine.maxTorque to 388.
+- Set weight.upPercent to 20.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 43.95 kg
   - Rear downforce: 53.81 kg
 
 ### Audi R8 GT3 (carId: 39)
-- Set front drag coefficient to 0.29.
-- Set rear drag coefficient to 2.19.
-- Set front downforce to 70.
+- Set aero.sx to 2.44.
+- Set aero.cx to 0.33.
 - Set turbo pressure to 0.412.
 - Set car weight to 1235 kg.
-- Set front weight distribution to 50%.
+- Set engine.revLimiter to 6200.
+- Set weight.frontPercent to 53.8%.
+- Set engine.maxTorque to 567.
+- Set transmission.gearType to GEAR_RWD.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 50.54 kg
   - Rear downforce: 61.76 kg
 
 ### Porsche 992 GT3 (carId: 94)
-- Set front drag coefficient to 0.36.
-- Set rear drag coefficient to 2.23.
+- Set aero.sx to 2.37.
+- Set aero.cx to 0.3.
 - Set turbo pressure to 0.532.
 - Set car weight to 1245 kg.
+- Set engine.revLimiter to 9000.
+- Set weight.frontPercent to 54.5%.
+- Set engine.maxTorque to 360.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 35.89 kg
   - Rear downforce: 66.65 kg
 
 ### Lamborghini Huracan GT3 (carId: 102)
-- Set front drag coefficient to 0.26.
-- Set rear drag coefficient to 2.11.
-- Set front downforce to 70.
+- Set aero.sx to 2.4.
+- Set aero.cx to 0.36.
 - Set turbo pressure to 0.
-- Set RPM limiter to 7550.
 - Set car weight to 1235 kg.
+- Set engine.revLimiter to 8250.
+- Set weight.frontPercent to 53.9%.
+- Set engine.maxTorque to 522.
+- Set transmission.gearType to GEAR_RWD.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 48.34 kg
   - Rear downforce: 59.08 kg
 
 ### Nissan GT-R R35 GT3 (carId: 28)
-- Set front drag coefficient to 0.322.
-- Set rear drag coefficient to 2.222.
-- Set front downforce to 70.
+- Set aero.sx to 2.81.
+- Set aero.cx to 0.322.
 - Set turbo pressure to 0.55.
 - Set car weight to 1300 kg.
+- Set engine.revLimiter to 6500.
+- Set weight.frontPercent to 53.5%.
+- Set engine.maxTorque to 478.
+- Set transmission.gearType to GEAR_RWD.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 43.95 kg
   - Rear downforce: 53.81 kg
 
 ### McLaren 720S GT3 EVO (carId: 100)
-- Set front drag coefficient to 0.26.
-- Set rear drag coefficient to 2.42.
+- Set aero.sx to 2.45.
+- Set aero.cx to 0.35.
 - Set turbo pressure to 1.073.
 - Set car weight to 1235 kg.
+- Set engine.revLimiter to 8500.
+- Set weight.frontPercent to 54.3%.
+- Set engine.maxTorque to 350.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 52.73 kg
   - Rear downforce: 64.46 kg
 
 ### Lexus RC-F GT3 (carId: 81)
-- Set front drag coefficient to 0.32.
-- Set rear drag coefficient to 1.52.
+- Set aero.sx to 2.59.
+- Set aero.cx to 0.32.
 - Set turbo pressure to 0.098.
-- Set RPM limiter to 6500.
 - Set car weight to 1300 kg.
+- Set engine.revLimiter to 6800.
+- Set weight.frontPercent to 54.5%.
+- Set engine.maxTorque to 587.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 43.95 kg
   - Rear downforce: 53.81 kg
 
 ### Acura NSX GT3 EVO (carId: 97)
-- Set front drag coefficient to 0.28.
-- Set rear drag coefficient to 2.18.
+- Set aero.sx to 2.44.
+- Set aero.cx to 0.28.
 - Set turbo pressure to 0.045.
-- Set RPM limiter to 6000.
 - Set car weight to 1240 kg.
+- Set engine.revLimiter to 7500.
+- Set weight.frontPercent to 54.2%.
+- Set engine.maxTorque to 508.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 48.34 kg
   - Rear downforce: 59.08 kg
 
 ### Mercedes AMG GT GT3 (carId: 82)
-- Set front drag coefficient to 0.26.
-- Set rear drag coefficient to 2.16.
+- Set aero.sx to 2.57.
+- Set aero.cx to 0.26.
 - Set turbo pressure to 0.014.
 - Set car weight to 1285 kg.
+- Set engine.revLimiter to 6500.
+- Set weight.frontPercent to 54.2%.
+- Set engine.maxTorque to 644.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 48.34 kg
   - Rear downforce: 59.08 kg
 
 ### Toyota GR Supra A90 GT3 (carId: 89)
-- Set front drag coefficient to 0.3.
-- Set rear drag coefficient to 2.
+- Set aero.sx to 2.59.
+- Set aero.cx to 0.3.
 - Set turbo pressure to 1.047.
 - Set car weight to 1250 kg.
 - **Downforce Changes at 100 km/h:**
@@ -113,107 +139,60 @@ This project modifies various performance parameters for different race cars in 
   - Rear downforce: 53.81 kg
 
 ### Corvette C7 GT3 (carId: 64)
-- Set front drag coefficient to 0.29.
-- Set rear drag coefficient to 2.19.
+- Set aero.sx to 2.51.
+- Set aero.cx to 0.27.
 - Set turbo pressure to 0.
-- Set RPM limiter to 4500.
 - Set car weight to 1245 kg.
+- Set engine.revLimiter to 7000.
+- Set weight.frontPercent to 54.1%.
+- Set engine.maxTorque to 690.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 43.95 kg
   - Rear downforce: 53.81 kg
 
 ### Bentley GT3 (carId: 33)
-- Set front drag coefficient to 0.26.
-- Set rear drag coefficient to 2.46.
+- Set aero.sx to 2.7.
+- Set aero.cx to 0.29.
 - Set turbo pressure to 0.127.
 - Set car weight to 1285 kg.
-- Set front weight distribution to 54%.
+- Set engine.revLimiter to 6000.
+- Set weight.frontPercent to 54.2%.
+- Set engine.maxTorque to 660.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 48.34 kg
   - Rear downforce: 59.08 kg
 
 ### Ford Mustang GT3 (carId: 122)
-- Set front drag coefficient to 0.27.
-- Set rear drag coefficient to 2.16.
+- Set aero.sx to 2.55.
+- Set aero.cx to 0.32.
 - Set turbo pressure to 0.016.
 - Set car weight to 1300 kg.
+- Set engine.revLimiter to 7500.
+- Set weight.frontPercent to 54.1%.
+- Set engine.maxTorque to 600.
 - **Downforce Changes at 100 km/h:**
   - Front downforce: 43.95 kg
   - Rear downforce: 53.81 kg
 
+### Ferrari 296 GT3 (carId: 116)
+- Set aero.sx to 2.48.
+- Set aero.cx to 0.4.
+- Set turbo pressure to 0.53.
+- Set car weight to 1285 kg (unchanged).
+- Set engine.revLimiter to 8250.
+- Set weight.frontPercent to 53.5%.
+- Set engine.maxTorque to 508.
+- **Downforce Changes at 100 km/h:**
+  - Front downforce: 48.34 kg
+  - Rear downforce: 59.08 kg
+
 ### LMDH Cars
 
-#### Toyota GR010 Hybrid (carId: 114)
-- Set front drag coefficient to -0.02.
-- Set rear drag coefficient to 1.98.
-- Set turbo pressure to 1.264.
-- Set car weight to 1040 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 200 kg
-  - Rear downforce: 244.44 kg
-
-#### Porsche 963 LMDh (carId: 94)
-- Set front drag coefficient to 0.02.
-- Set rear drag coefficient to 2.02.
-- Set turbo pressure to 1.133.
-- Set car weight to 1030 kg.
-- Set front weight distribution to 47%.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 190 kg
-  - Rear downforce: 232.22 kg
-
-#### Peugeot 9X8 (carId: 128)
-- Set front drag coefficient to -0.13.
-- Set rear drag coefficient to 1.87.
-- Set turbo pressure to 1.035.
-- Set car weight to 1040 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 205 kg
-  - Rear downforce: 250.56 kg
-
-#### Glickenhaus SCG 007 LMH (carId: 121)
-- Set front drag coefficient to -0.05.
-- Set rear drag coefficient to 1.95.
-- Set turbo pressure to 1.225.
-- Set car weight to 1030 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 200 kg
-  - Rear downforce: 244.44 kg
-
-#### Ferrari 499P LMH (carId: 116)
-- Set front drag coefficient to -0.09.
-- Set rear drag coefficient to 1.91.
-- Set turbo pressure to 0.78.
-- Set car weight to 1040 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 197.50 kg
-  - Rear downforce: 241.39 kg
-
-#### Cadillac LMH (carId: 71)
-- Set front drag coefficient to -0.11.
-- Set rear drag coefficient to 1.89.
-- Set turbo pressure to 1.21.
-- Set car weight to 1030 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 192.50 kg
-  - Rear downforce: 235.28 kg
-
-#### BMW M Hybrid (carId: 101)
-- Set car weight to 1030 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 187.50 kg
-  - Rear downforce: 229.17 kg
+(LMDH car settings remain unchanged)
 
 ### Karting
 
-#### Kei Truck Karting (carId: 118)
-- Set front drag coefficient to 0.5.
-- Set rear drag coefficient to 1.5.
-- Set turbo pressure to 0.
-- Set car weight to 150 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 2 kg
-  - Rear downforce: 3 kg
+(Karting settings remain unchanged)
 
 ## Features
 - Adjustments for GT3, LMDH, and Karting vehicles
