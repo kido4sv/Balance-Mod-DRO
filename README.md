@@ -1,232 +1,62 @@
-# Balance Mod for CarX
+# Vehicle Physics & Race Management System (Balance Mod)
 
-This project modifies various performance parameters for different race cars in CarX. The adjustments include changes to aerodynamic drag, downforce, turbo pressure, RPM limiter, and car weight distribution.
+![Version](https://img.shields.io/badge/version-1.0.31-blue)
+![Platform](https://img.shields.io/badge/platform-CarX%20|%20Unity-orange)
+![Language](https://img.shields.io/badge/language-C%23-green)
 
-## Car Model Adjustments
+A comprehensive C#-based refactoring and simulation suite for CarX, designed to implement realistic vehicle balancing, advanced race logic, and real-time multiplayer synchronization.
 
-### GT3 Cars
+## 🚀 Key Technical Features
 
-### BMW M4 GT3 (carId: 32)
-- Set aero.sx to 2.54.
-- Set turbo pressure to 0.83.
-- Set car weight to 1250 kg.
-- Set engine.revLimiter to 7500.
-- Set weight.frontPercent to 54.1%.
-- Set engine.maxTorque to 410.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 48.34 kg
-  - Rear downforce: 59.08 kg
+### 1. Advanced Physics Simulation
+*   **Aerodynamics Model:** Custom implementation of downforce and drag coefficients:
+    *   `aero.sx` — Frontal cross-sectional area (m²) affecting drag force.
+    *   `aero.cx` — Drag coefficient (dimensionless) representing aerodynamic resistance.
+    *   Both values are calculated and applied in real-time to simulate realistic high-speed behavior.
+*   **Engine & Powertrain:** Fine-tuned turbo pressure logic, RPM limiters, and torque curve adjustments to match real-world GT3 specifications.
+*   **Weight Dynamics:** Dynamic adjustment of mass distribution:
+    *   `frontPercent` — Front/rear weight distribution (%) affecting understeer/oversteer balance.
+    *   `upPercent` — Vertical center of mass position (%) influencing roll behavior and stability.
 
-### Aston Martin GT3 (carId: 123)
-- Set aero.sx to 2.5.
-- Set aero.cx to 0.3.
-- Set turbo pressure to 0.68.
-- Set car weight to 1245 kg.
-- Set engine.revLimiter to 7200.
-- Set weight.frontPercent to 53.7%.
-- Set engine.maxTorque to 388.
-- Set weight.upPercent to 20.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 43.95 kg
-  - Rear downforce: 53.81 kg
+### 2. Race Management System (State Machine)
+A robust backend logic handling the entire race weekend lifecycle:
+*   **Phases:** Lobby -> Practice -> Qualifying -> Race -> Overtime -> Podium.
+*   **Overtime Logic:** Smart finish conditions that account for leader progress and session timers.
+*   **Grid Management:** Automated teleportation and anti-stuck systems for synchronized grid starts.
 
-### Audi R8 GT3 (carId: 39)
-- Set aero.sx to 2.44.
-- Set aero.cx to 0.33.
-- Set turbo pressure to 0.412.
-- Set car weight to 1235 kg.
-- Set engine.revLimiter to 6200.
-- Set weight.frontPercent to 53.8%.
-- Set engine.maxTorque to 567.
-- Set transmission.gearType to GEAR_RWD.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 50.54 kg
-  - Rear downforce: 61.76 kg
+### 3. Multiplayer Synchronization
+*   Built on top of the **Kino.Sync API** to ensure all physics and race state changes are broadcasted to clients with minimal latency.
+*   Custom network packet handling for real-time telemetry and session configuration.
 
-### Porsche 992 GT3 (carId: 94)
-- Set aero.sx to 2.37.
-- Set aero.cx to 0.3.
-- Set turbo pressure to 0.532.
-- Set car weight to 1245 kg.
-- Set engine.revLimiter to 9000.
-- Set weight.frontPercent to 54.5%.
-- Set engine.maxTorque to 360.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 35.89 kg
-  - Rear downforce: 66.65 kg
+### 4. Developer & Tuning Tools
+*   **Custom Unity Canvas UI:** Built from scratch using Unity's Canvas system and integrated via the mod framework.
+*   **IMGUI Dashboard:** Live monitoring of vehicle stats (HP, Torque, Weight distribution, Aero forces).
+*   **Real-time Tuning Interface:** On-the-fly adjustments of physics parameters for rapid testing and validation.
 
-### Lamborghini Huracan GT3 (carId: 102)
-- Set aero.sx to 2.4.
-- Set aero.cx to 0.36.
-- Set turbo pressure to 0.
-- Set car weight to 1235 kg.
-- Set engine.revLimiter to 8250.
-- Set weight.frontPercent to 53.9%.
-- Set engine.maxTorque to 522.
-- Set transmission.gearType to GEAR_RWD.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 48.34 kg
-  - Rear downforce: 59.08 kg
+![Session Setup UI](https://github.com/kido4sv/Balance-Mod-DRO/blob/main/session_setup.png?raw=true)
+![Lap Timing HUD](https://github.com/kido4sv/Balance-Mod-DRO/blob/main/lap_timing.png?raw=true)
 
-### Nissan GT-R R35 GT3 (carId: 28)
-- Set aero.sx to 2.81.
-- Set aero.cx to 0.322.
-- Set turbo pressure to 0.55.
-- Set car weight to 1300 kg.
-- Set engine.revLimiter to 6500.
-- Set weight.frontPercent to 53.5%.
-- Set engine.maxTorque to 478.
-- Set transmission.gearType to GEAR_RWD.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 43.95 kg
-  - Rear downforce: 53.81 kg
+## 🛠 Tech Stack
+*   **Language:** C# (.NET)
+*   **Engine:** Unity Engine
+*   **UI:** Unity Canvas, IMGUI
+*   **Tools:** Git, Visual Studio, Kino Mod API
 
-### McLaren 720S GT3 EVO (carId: 100)
-- Set aero.sx to 2.45.
-- Set aero.cx to 0.35.
-- Set turbo pressure to 1.073.
-- Set car weight to 1235 kg.
-- Set engine.revLimiter to 8500.
-- Set weight.frontPercent to 54.3%.
-- Set engine.maxTorque to 350.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 52.73 kg
-  - Rear downforce: 64.46 kg
+## 📋 Installation
+1. Install **KSL** (Kino Support Library): [GitHub](https://github.com/trbflxr/ksl)
+2. Install **Kino Mod**: [GitHub](https://github.com/trbflxr/kino)
+3. Download this mod and drop the `.dll` into:
+   `...\CarX Drift Racing Online\kino\mods`
 
-### Lexus RC-F GT3 (carId: 81)
-- Set aero.sx to 2.59.
-- Set aero.cx to 0.32.
-- Set turbo pressure to 0.098.
-- Set car weight to 1300 kg.
-- Set engine.revLimiter to 6800.
-- Set weight.frontPercent to 54.5%.
-- Set engine.maxTorque to 587.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 43.95 kg
-  - Rear downforce: 53.81 kg
+## 🏎 Supported Classes (Balance Presets)
+The mod currently includes meticulously researched **BoP (Balance of Performance)** presets for:
+*   **GT3 Class:** BMW M4 GT3, Porsche 992 GT3, Ferrari 296 GT3, Aston Martin Vantage GT3, and more.
 
-### Acura NSX GT3 EVO (carId: 97)
-- Set aero.sx to 2.44.
-- Set aero.cx to 0.28.
-- Set turbo pressure to 0.045.
-- Set car weight to 1240 kg.
-- Set engine.revLimiter to 7500.
-- Set weight.frontPercent to 54.2%.
-- Set engine.maxTorque to 508.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 48.34 kg
-  - Rear downforce: 59.08 kg
+> **Note:** LMDH and Karting presets have been temporarily removed and may return in future updates.
 
-### Mercedes AMG GT GT3 (carId: 82)
-- Set aero.sx to 2.57.
-- Set aero.cx to 0.26.
-- Set turbo pressure to 0.014.
-- Set car weight to 1285 kg.
-- Set engine.revLimiter to 6500.
-- Set weight.frontPercent to 54.2%.
-- Set engine.maxTorque to 644.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 48.34 kg
-  - Rear downforce: 59.08 kg
+## 👥 Credits & Contributors
+*   **Lead Developer:** [Kido](https://github.com/kido4sv)
+*   **Testing & Development Support:** Jeefrect, Popura, Harvok, Giozzik, Xameron, Dranser, Schnordic.
 
-### Toyota GR Supra A90 GT3 (carId: 89)
-- Set aero.sx to 2.59.
-- Set aero.cx to 0.3.
-- Set turbo pressure to 1.047.
-- Set car weight to 1250 kg.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 43.95 kg
-  - Rear downforce: 53.81 kg
-
-### Corvette C7 GT3 (carId: 64)
-- Set aero.sx to 2.51.
-- Set aero.cx to 0.27.
-- Set turbo pressure to 0.
-- Set car weight to 1245 kg.
-- Set engine.revLimiter to 7000.
-- Set weight.frontPercent to 54.1%.
-- Set engine.maxTorque to 690.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 43.95 kg
-  - Rear downforce: 53.81 kg
-
-### Bentley GT3 (carId: 33)
-- Set aero.sx to 2.7.
-- Set aero.cx to 0.29.
-- Set turbo pressure to 0.127.
-- Set car weight to 1285 kg.
-- Set engine.revLimiter to 6000.
-- Set weight.frontPercent to 54.2%.
-- Set engine.maxTorque to 660.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 48.34 kg
-  - Rear downforce: 59.08 kg
-
-### Ford Mustang GT3 (carId: 122)
-- Set aero.sx to 2.55.
-- Set aero.cx to 0.32.
-- Set turbo pressure to 0.016.
-- Set car weight to 1300 kg.
-- Set engine.revLimiter to 7500.
-- Set weight.frontPercent to 54.1%.
-- Set engine.maxTorque to 600.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 43.95 kg
-  - Rear downforce: 53.81 kg
-
-### Ferrari 296 GT3 (carId: 116)
-- Set aero.sx to 2.48.
-- Set aero.cx to 0.4.
-- Set turbo pressure to 0.53.
-- Set car weight to 1285 kg (unchanged).
-- Set engine.revLimiter to 8250.
-- Set weight.frontPercent to 53.5%.
-- Set engine.maxTorque to 508.
-- **Downforce Changes at 100 km/h:**
-  - Front downforce: 48.34 kg
-  - Rear downforce: 59.08 kg
-
-### LMDH Cars
-
-(LMDH car settings remain unchanged)
-
-### Karting
-
-(Karting settings remain unchanged)
-
-## Features
-- Adjustments for GT3, LMDH, and Karting vehicles
-- Real-time updates to maintain consistent performance
-- Easy-to-use interface with mutually exclusive toggle buttons
-
-## How to Use
-1. Install the mod following the standard CarX mod installation procedure
-- " Install firstly KSL https://github.com/trbflxr/ksl "
-- " Install secondly Kino Mod https://github.com/trbflxr/kino "
-- " Install Balance mod "
-- "Drop it into steam\steamapps\common\CarX Drift Racing Online\kino\mods"
-3. In the game, access the mod menu.
-4. Choose one of the three options:
-   - "Apply Settings for GT-3 Car"
-   - "Apply Settings for LMDH Car"
-   - "Karting on Kei Truck"
-5. The mod will automatically apply the appropriate settings for your selected car category.
-
-Note: Only one setting can be active at a time. Activating a new setting will automatically deactivate the others.
-
-## Version
-Current Version: 1.0.3
-
-## Credits
-- Created by Kido
-- And special thanks to these guys for testing and developing the Mod:
-- Jeefrect
-- Popura
-- Harvok
-- Giozzik
-- Xameron
-- Dranser
-- Schnordic
-- and others
-
-For bug reports or feature requests, please open an issue in this repository.
+---
+*Disclaimer: This project is for educational and community purposes, showcasing C# integration within the Unity environment.*
