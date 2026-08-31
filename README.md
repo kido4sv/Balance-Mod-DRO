@@ -22,6 +22,7 @@ The mod includes a dedicated GT3 configuration system with embedded car data and
 * torque / RPM / rev limiter values
 * aerodynamic drag and downforce parameters
 * per-car fuel config and startup values
+* engine map's
 
 The current pack contains **18 GT3 car configs**, including cars such as:
 BMW M4 GT3, Porsche 992 GT3 R, Ferrari 296 GT3, Lamborghini Huracan GT3 EVO2, Aston Martin Vantage GT3, Audi R8 LMS GT3, Nissan GT-R GT3, McLaren 720S GT3 EVO, Lexus RC F GT3, Acura NSX GT3 EVO, Mercedes-AMG GT3, Corvette Z06 GT3 and more.
@@ -35,6 +36,8 @@ Balance Mod has its own runtime tire model layer with:
 * pressure calculation based on temperature
 * hot/cold tire install logic
 * tire stint tracking for HUD and race logic
+* dynamic camber grip
+
 
 Pit service can install fresh tires, and session transitions now automatically mount fresh tires when moving:
 
@@ -270,7 +273,7 @@ All of that lives inside one Unity/C# CarX mod project.
 ## Credits
 
 * **Lead Developer:** [Kido](https://github.com/kido4sv)
-* **Testing / Development Support:** Jeefrect, Popura, Harvok, Giozzik, Xameron, Dranser, Schnordic
+* **Testing / Development Support:** Jeefrect, Popura, Harvok, Giozzik, Xameron, Dranser, Schnordic, stiiky
 
 ---
 
