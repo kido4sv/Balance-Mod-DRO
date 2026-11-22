@@ -8,24 +8,25 @@
 Balance Mod is a full C# gameplay and race-management overhaul for CarX Drift Racing Online.
 It combines GT3 balancing, tire and fuel simulation, lap timing, live HUD systems, online race weekend logic, multiplayer sync, broadcast tools, and result export in one modular project.
 
+This page reflects Balance Mod version **1.0.70**.
+
 The current version of the mod is no longer just a car-balance experiment. It is now a full race-control layer built on top of CarX + Kino/KSL, with its own session flow, track logic, telemetry processing, HUD stack, and external integration pipeline.
 
 ## Key Features
 
 ### 1. GT3 Balance of Performance Presets
-The mod includes a dedicated GT3 configuration system with embedded car data and runtime application of:
+The mod includes a dedicated vehicle configuration system centered on GT3, with embedded car data and runtime application of:
 
 * mass and weight distribution
 * center-of-mass height
 * gearbox ratios and final drive
 * turbo pressure
 * torque / RPM / rev limiter values
+* selectable engine maps
 * aerodynamic drag and downforce parameters
 * per-car fuel config and startup values
-* engine map's
 
-The current pack contains **18 GT3 car configs**, including cars such as:
-BMW M4 GT3, Porsche 992 GT3 R, Ferrari 296 GT3, Lamborghini Huracan GT3 EVO2, Aston Martin Vantage GT3, Audi R8 LMS GT3, Nissan GT-R GT3, McLaren 720S GT3 EVO, Lexus RC F GT3, Acura NSX GT3 EVO, Mercedes-AMG GT3, Corvette Z06 GT3 and more.
+The current pack contains **14 active vehicle configs**: 12 GT3-oriented presets plus VRL V8 Supercar and LMH. The GT3 selection includes BMW M4 GT3, BMW M3 GT3 Touring, Porsche 911 GT3 R (992), Ferrari 296 GT3, Lamborghini Huracan GT3 EVO2, Aston Martin Vantage GT3, Audi R8 LMS GT3, McLaren 720S GT3 EVO, Mercedes-AMG GT3, Corvette Z06 GT3, Ford Mustang GT3 and Toyota GR GT3.
 
 ### 2. Tire System
 Balance Mod has its own runtime tire model layer with:
@@ -34,10 +35,9 @@ Balance Mod has its own runtime tire model layer with:
 * wear accumulation
 * grip loss from wear, temperature and pressure
 * pressure calculation based on temperature
+* dynamic camber influence on grip, temperature and wear
 * hot/cold tire install logic
 * tire stint tracking for HUD and race logic
-* dynamic camber grip
-
 
 Pit service can install fresh tires, and session transitions now automatically mount fresh tires when moving:
 
@@ -119,6 +119,7 @@ The mod includes race-control systems beyond vanilla CarX behavior:
 * cut detection and off-track monitoring
 * track-limits excursion evaluation
 * yellow / white / blue flag logic
+* host-controlled red flag
 * drive-through penalties
 * black-flag state
 * local HUD indicators for cuts and penalties
@@ -129,8 +130,11 @@ Balance Mod has several runtime HUD layers:
 * Lap Timing HUD
 * Broadcast standings HUD
 * Fuel status overlay
+* Radar overlay
 * Flag overlay
 * Cut / penalty overlay
+* Pit strategy and pit service overlays
+* Mandatory pit-stop and pit-lane overlays
 * Finish results overlay
 
 Broadcast standings support multiple display modes:
@@ -141,8 +145,10 @@ Broadcast standings support multiple display modes:
 
 The broadcast HUD is fed by a dedicated snapshot builder instead of direct UI polling, which keeps the UI cleaner and easier to extend.
 
-![Session Setup UI](https://github.com/kido4sv/Balance-Mod-DRO/blob/main/session_setup.png?raw=true)
-![Lap Timing HUD](https://github.com/kido4sv/Balance-Mod-DRO/blob/main/lap_timing.png?raw=true)
+The selected UI language is also applied to the gameplay HUDs, including timing, fuel, radar, broadcast standings, race results, traction control, pit strategy and pit-service displays.
+
+![Session Setup UI](session_setup.png)
+![Lap Timing HUD](lap_timing.png)
 
 ## Multiplayer Sync and Networking
 
@@ -190,7 +196,7 @@ This makes the mod useful not only as gameplay logic, but also as backend infras
 
 ## Track and Racing-Line Support
 
-The project includes embedded fast-lane data for **13 tracks**, used by:
+The project includes embedded fast-lane data for **17 tracks**, used by:
 
 * lap delta
 * track progress logic
@@ -211,6 +217,8 @@ Besides race features, the mod still includes a large amount of tuning and debug
 * aero tools
 * final drive tuning
 * tire pressure controls
+* traction-control settings and keybinds
+* brake-balance and engine-map keybinds
 * debug visualizers
 * performance sampling hooks
 
@@ -231,12 +239,15 @@ The current project state is more focused and production-ready than older intern
 * KEF Stars integration
 * smoother player gap / interval timing
 * automatic fresh-tire install between sessions
+* localized gameplay HUDs
+* traction-control, engine-map and brake-balance controls
+* dynamic camber effects on tire behavior
+* assigned pit-box guidance and pit-service validation
 
 ### Simplified / Removed / Streamlined
 * fuel menu was reduced to essentials
 * noisy debug spam for fuel and lap-delta release builds was removed
 * default instant pit / tire reset keybind clutter was reduced to a single full pitstop bind
-* older non-core preset directions like LMDH / Kart focus were removed from the current public feature set so the mod can stay focused on the GT3 race package
 
 ## Tech Stack
 
@@ -251,8 +262,8 @@ The current project state is more focused and production-ready than older intern
 
 1. Install **KSL**: [https://github.com/trbflxr/ksl](https://github.com/trbflxr/ksl)
 2. Install **Kino**: [https://github.com/trbflxr/kino](https://github.com/trbflxr/kino)
-3. Build or download the mod package
-4. Place the compiled mod into:
+3. Build or download `BalanceMod.ksm`
+4. Place `BalanceMod.ksm` into:
 
 ```text
 ...\CarX Drift Racing Online\kino\mods
